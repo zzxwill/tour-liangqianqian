@@ -40,9 +40,15 @@ public class HandleLiuyan extends HttpServlet {
         String board_context=request.getParameter("board_context");
         String board_name=request.getParameter("board_name");
         String board_title=request.getParameter("board_title");
+        
+        /*
+         * 将当前时间格式化
+         */
         Date time=new Date();
         SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date0=fmt.format(time.getTime()) ;
+        String date0=fmt.format(time) ;
+        
+        
         String backNews="";
         boolean boo=true;
         if(board_name.length()==0||board_title.length()==0||board_context.length()==0)
