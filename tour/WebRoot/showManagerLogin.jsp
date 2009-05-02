@@ -42,7 +42,7 @@
     <td height="25" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="line_manage/show_line.jsp">线路信息更改</a></div></td>
+          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="lineUpdate.jsp">线路信息更改</a></div></td>
         </tr>
       </table></td>
   </tr>
@@ -50,7 +50,7 @@
     <td height="25" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="line_manage/a_line.htm">增加旅游线路</a></div></td>
+          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="addLine.jsp">增加旅游线路</a></div></td>
         </tr>
       </table></td>
   </tr>

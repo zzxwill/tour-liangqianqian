@@ -57,5 +57,39 @@
     <servlet-name>handleline</servlet-name>
     <url-pattern>/handleline</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>handleupdateline</servlet-name>
+    <servlet-class>myservlet.control.HandleUpdateLine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleupdateline</servlet-name>
+    <url-pattern>/handleupdateline</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>updateline</servlet-name>
+    <servlet-class>myservlet.control.UpdateLine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateline</servlet-name>
+    <url-pattern>/updateline</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>handleaddline</servlet-name>
+    <servlet-class>myservlet.control.HandleAddLine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleaddline</servlet-name>
+    <url-pattern>/handleaddline</url-pattern>
+  </servlet-mapping>
+  
+ 
+  
+  
+  
+  
 </web-app>
 
