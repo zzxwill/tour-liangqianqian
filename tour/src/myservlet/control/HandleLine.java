@@ -47,7 +47,7 @@ public class HandleLine extends HttpServlet {
                 backNews.append("<tr><td><a herf=line_intro.jsp>"+rs.getString(1)+"</a></td></tr>");
             }
             backNews.append("</table>");
-            line.setBackNews(backNews);
+     //       line.setBackNews(backNews);
              }
             con.close();
        }

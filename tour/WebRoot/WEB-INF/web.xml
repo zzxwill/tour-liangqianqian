@@ -69,6 +69,15 @@
   
   
   <servlet>
+    <servlet-name>handleresponse</servlet-name>
+    <servlet-class>myservlet.control.HandleResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleresponse</servlet-name>
+    <url-pattern>/handleresponse</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>updateline</servlet-name>
     <servlet-class>myservlet.control.UpdateLine</servlet-class>
   </servlet>
@@ -86,8 +95,51 @@
     <url-pattern>/handleaddline</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>handleaddbulletin</servlet-name>
+    <servlet-class>myservlet.control.HandleAddBulletin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleaddbulletin</servlet-name>
+    <url-pattern>/handleaddbulletin</url-pattern>
+  </servlet-mapping>
  
+ <servlet>
+    <servlet-name>handleupdatebulletin</servlet-name>
+    <servlet-class>myservlet.control.HandleUpdateBulletin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleupdatebulletin</servlet-name>
+    <url-pattern>/handleupdatebulletin</url-pattern>
+  </servlet-mapping>
   
+   <servlet>
+    <servlet-name>updatebulletin</servlet-name>
+    <servlet-class>myservlet.control.UpdateBulletin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updatebulletin</servlet-name>
+    <url-pattern>/updatebulletin</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+    <servlet-name>searchresult</servlet-name>
+    <servlet-class>myservlet.control.SearchResult</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchresult</servlet-name>
+    <url-pattern>/searchresult</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>handlebookline</servlet-name>
+    <servlet-class>myservlet.control.HandleBookLine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handlebookline</servlet-name>
+    <url-pattern>/handlebookline</url-pattern>
+  </servlet-mapping>
   
   
   

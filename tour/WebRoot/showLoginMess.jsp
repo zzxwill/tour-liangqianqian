@@ -62,7 +62,18 @@
 			  %>
 					    登录会员名称:
                         <jsp:getProperty name="login" property="user_name"/>
-					    <% }
+					    <%
+					   //  Object user_nameObject=session.getAttribute("user_name");
+						// String y=(String)user_nameObject; 
+						//保存用户的登录名
+						
+						session.setAttribute("name",request.getParameter("user_name"));
+			//			System.out.println(request.getSession().getAttribute("name")
+
+
+						
+					    }
+					    
 			  else
 			  {
 			  %>
