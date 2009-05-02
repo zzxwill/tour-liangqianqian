@@ -21,7 +21,7 @@
   <tr>
     <td height="356">
     <form action="handleupdateline" method="post"> 
-     路线名称：  <input name="name" type="text" value=<%=name %> size="25" ><br />
+     路线名称：  <input name="name" type="text" value=<%=name %> size="25" readonly><br />
      路线介绍：<input name="intro" type="text" value=<%=intro%> size="20" ><br />
   是否火爆: <input name="hot" type="text" value=<%=hot %> size="25"  ><br />
 	<input type="submit" value="确认更改" /><br />

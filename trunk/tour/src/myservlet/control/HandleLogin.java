@@ -57,6 +57,9 @@ public class HandleLogin extends HttpServlet {
 
                    backNews=user_name+"ÒÑ¾­µÇÂ¼ÁË";
                    loginBean.setBackNews(backNews);
+                   
+                   
+                   
                }
                else{
                   String uri="jdbc:odbc:tour";
@@ -78,6 +81,9 @@ public class HandleLogin extends HttpServlet {
                               loginBean.setBackNews(backNews);
                               loginBean.setSuccess(true);
                               loginBean.setUser_name(user_name);
+                              
+                              
+                              
                           }
                           else
                           {

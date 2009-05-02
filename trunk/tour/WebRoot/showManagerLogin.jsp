@@ -66,7 +66,7 @@
     <td height="25" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="bulletin_manage/a_bulletin.htm">增加公告</a></div></td>
+          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="addBulletin.jsp">增加公告</a></div></td>
         </tr>
       </table></td>
   </tr>
@@ -74,7 +74,7 @@
     <td height="25" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
         <!--DWLayoutTable-->
         <tr>
-          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="bulletin_manage/bulletin.jsp">公告信息更改</a></div></td>
+          <td width="160" height="25" bgcolor="#ADCFEF"><div align="center"><a href="bulletinUpdate.jsp">公告信息更改</a></div></td>
         </tr>
       </table></td>
   </tr>

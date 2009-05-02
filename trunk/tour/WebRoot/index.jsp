@@ -42,7 +42,7 @@ a:link {
           <td height="30" valign="top"><table width="100%" border="1" cellpadding="0" cellspacing="0">
               <!--DWLayoutTable-->
               <tr>
-                <td width="210" height="30" background="image/dbj.jpg"><span class="style1"> 　 <img src="images/003.gif" width="16" height="16">　热点线路　　　<img src="images/13571911.gif" width="36" height="17"></span></td>
+                <td width="210" height="30" background="image/dbj.jpg"><span class="style1"> 　 <img src="images/003.gif" width="16" height="16">　热点线路　　　　<a href="showLine.jsp"><img src="images/13571911.gif" width="36" height="17"></a></span></td>
               </tr>
             </table></td>
         </tr>
@@ -183,7 +183,8 @@ marquees.scrollTop=templayer.offsetHeight-marqueesHeight+1;
           <td height="13" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
               <!--DWLayoutTable-->
               <tr>
-                <td width="385" height="13" valign="middle"><form name="form2" method="post" action="">
+                <td width="385" height="13" valign="middle">
+                <form name="form2" method="post" action="searchresult">
                     <table width="100%" border="0" cellspacing="0">
                       <tr>
                         <td width="38%"><div align="center" class="style1">旅游线路名称:</div></td>
@@ -193,6 +194,13 @@ marquees.scrollTop=templayer.offsetHeight-marqueesHeight+1;
                     </table>
                   </form></td>
               </tr>
+              
+              
+<!-- 这是Google的Search. -->
+
+
+              
+              
             </table></td>
         </tr>
         <tr>

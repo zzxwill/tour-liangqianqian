@@ -22,7 +22,7 @@
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-            String insertCondition ="select * from tour_line_info";
+            String insertCondition ="select * from board_info";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 
@@ -34,22 +34,33 @@
          
             
             <tr>
-            <td>旅游线路</td><td>人气很高</td><td>线路介绍</td></tr>
+            <td>留言标题</td><td>留言内容</td><td>操作</td></tr>
+           
             <%
+            
             while (rs.next()){
- //           	out.println(rs.getObject("tour_line_name"));
-//           	String tour_line_name=String.valueOf(rs.getObject("tour_line_name"));
- //          	String tour_line_intro=String.valueOf();
- //          	String hot_tour_line=String.valueOf();
-            out.println("<tr><td>"+rs.getObject("tour_line_name")+"</td>");
-            out.println("<td>"+rs.getObject("hot_tour_line")+"</td><td>");
-            out.println(rs.getObject("tour_line_intro")+"</td></tr>");
+            %>
+            <form  action="" method="post">
+             <%
+            out.println("<tr><td>"+rs.getObject("board_title")+"</td>");
+            out.println("<td>"+rs.getObject("board_context")+"</td><td>");
+            //             <textarea  cols=20 name="response_context" ></textarea>
+            
+            %>
+ 			  
+            <a href="makeResponse.jsp?board_title=<%=rs.getObject("board_title") %>">点击回复</a><br>
+            
+            </form>
+            
+            <% 
+ //           out.println(rs.getObject("tour_line_intro")+"</td></tr>");
             		
 			}
             con.close();
+            
        }
        catch(Exception e){
-    	   out.println("Error!");
+    	  
        } 
        
      %>

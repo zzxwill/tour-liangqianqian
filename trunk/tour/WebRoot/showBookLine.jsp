@@ -13,6 +13,8 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
    
    <%
+   String user_name=request.getParameter("user_name");
+   
    		Connection con;   
         try{
         	
@@ -22,7 +24,7 @@
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-            String insertCondition ="select * from tour_line_info";
+            String insertCondition ="select * from tour_line_book where user_name='"+user_name+"'";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 
@@ -34,7 +36,7 @@
          
             
             <tr>
-            <td>旅游线路</td><td>人气很高</td><td>线路介绍</td></tr>
+            <td>旅游线路</td><td>预订时间</td></tr>
             <%
             while (rs.next()){
  //           	out.println(rs.getObject("tour_line_name"));
@@ -42,8 +44,8 @@
  //          	String tour_line_intro=String.valueOf();
  //          	String hot_tour_line=String.valueOf();
             out.println("<tr><td>"+rs.getObject("tour_line_name")+"</td>");
-            out.println("<td>"+rs.getObject("hot_tour_line")+"</td><td>");
-            out.println(rs.getObject("tour_line_intro")+"</td></tr>");
+//            out.println("<td>"+rs.getObject("hot_tour_line")+"</td><td>");
+            out.println(rs.getObject("book_time")+"</td></tr>");
             		
 			}
             con.close();
