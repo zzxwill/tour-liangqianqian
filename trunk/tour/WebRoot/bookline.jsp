@@ -34,7 +34,7 @@
         <td align="center"><input type="radio" name="tour_line_name" value="云南雪山双飞七日游"></td>
       </tr> 
 	   <tr>
-    <td width="404" height="30" align="center"><a href="#">已预订线路查看与修改</a></td>
+    <td width="404" height="30" align="center"><a href="showBookLine.jsp?user_name=<%=request.getSession().getAttribute("name")%>">已预订线路查看与修改</a></td>
     <td><input type="text" name="user_name" value=<%=request.getSession().getAttribute("name")%> > 	</td>
     <td width="149" align="center"><input type="submit" name="Submit" value="我要预订"></td>
   </tr>
