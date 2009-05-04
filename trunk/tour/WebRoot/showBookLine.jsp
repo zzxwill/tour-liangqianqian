@@ -13,7 +13,8 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
    
    <%
-   String tour_line_name=request.getParameter("tour_line_name");
+ //  String user_name=request.getParameter("user_name");
+ 
    
    		Connection con;   
         try{
@@ -24,7 +25,7 @@
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-            String insertCondition ="select * from tour_line_info where tour_line_name='"+tour_line_name+"'";
+            String insertCondition ="select * from tour_line_book where user_name='"+request.getSession().getAttribute("name")+"'";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 

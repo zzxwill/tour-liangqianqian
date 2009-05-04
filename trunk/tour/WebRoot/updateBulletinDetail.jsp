@@ -1,16 +1,19 @@
-<%@ page contentType="text/html; charset=gb2312" %>
-<%@ page language="java" %>
+<%@   page   contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %>   
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+</head>
 <body>
+
 <%
+
+
 //	String tour_line_name=request.getParameter("name");
 //		String tour_line_intro=request.getParameter("intro");
 	String   bulletin_title=(String)request.getAttribute("bulletin_title");
 	String bulletin_context=(String)request.getAttribute("bulletin_context");
 	String bulletin_time=(String)request.getAttribute("bulletin_time");
-	
 	
  %>
 

@@ -45,6 +45,7 @@ public class HandleResponse extends HttpServlet {
 		
 		Connection con;   
 		request.setCharacterEncoding("gb2312");
+		
 		String board_title=request.getParameter("board_title");
 	    String response_context=request.getParameter("response_context");
 	    
@@ -81,11 +82,11 @@ public class HandleResponse extends HttpServlet {
             int number = st.executeUpdate(insertCondition);
             
             if(number==1){
-      		  out.println("Successful! 恭喜您，新任务添加成功！<br>");
+      		  out.println("Successful! <br>");
       		  out.println("<a href='/tour/response.jsp'>返回</a>");
       	  }
       	  else{
-      		  out.println("Sorry!对不起，新任务添加失败，请返回继续操作！");
+      		  out.println("Sorry! It fails.");
       		   out.println("<a href='/tour/response.jsp'>返回</a>");
       	  }
             con.close();

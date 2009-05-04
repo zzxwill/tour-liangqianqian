@@ -53,9 +53,15 @@ public class UpdateLine extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
+	
 		// TODO Auto-generated method stub
-		resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
+//		resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
 		PrintWriter out = resp.getWriter();
+		/*
+		 *  为了数据库数据的正确显示。
+		 */
+		out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
+
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");

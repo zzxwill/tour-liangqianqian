@@ -1,8 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@ page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %>   
 <%@ page language="java" %>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<head></head>
 <body>
 <%
 //	String tour_line_name=request.getParameter("name");
@@ -14,6 +15,9 @@
 
 	
  %>
+ 
+
+
 <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td><jsp:include page="top.jsp"/></td>
@@ -31,7 +35,7 @@
 </table>
 <table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td width="760" height="27" align="center" bgcolor="#71AD23"><span class="style9"><font color="#FFFFFF">制作人：中华女子学院05级计算机系 梁倩倩</font></span></td>
+    <td width="760" height="27" align="center" bgcolor="#71AD23"><font color="#FFFFFF">制作人：中华女子学院05级计算机系 梁倩倩</font></span></td>
   </tr>
 </table>
 </body>

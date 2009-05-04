@@ -54,8 +54,9 @@ public class UpdateBulletin extends HttpServlet {
 			throws ServletException, IOException {
 		
 		// TODO Auto-generated method stub
-		resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
+	//	resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
 		PrintWriter out = resp.getWriter();
+	out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
@@ -66,7 +67,6 @@ public class UpdateBulletin extends HttpServlet {
 		String bulletin_context=req.getParameter(" bulletin_context");
 //		String bulletin_time=req.getParameter("bulletin_timet");
 		
-		System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRR"+bulletin_context);
 		
 		
 //		resp.sendRedirect("/tour/updateLineDetail.jsp?name=<%=tour_line_name%>&intro=<%=tour_line_intro%>");
