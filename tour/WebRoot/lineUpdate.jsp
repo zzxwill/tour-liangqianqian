@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@ page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %> 
 <%@page import="java.sql.*;"  %>
 <html>
 <head>
@@ -11,6 +13,9 @@
   <tr>
     <td height="356"><form name="form1" method="post" action="handleupdateline">
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
+   <%
+   request.setCharacterEncoding("gb2312"); 
+    %>		
    
    <%
    		Connection con;   

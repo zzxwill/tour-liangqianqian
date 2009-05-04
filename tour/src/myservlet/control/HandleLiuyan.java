@@ -37,6 +37,7 @@ public class HandleLiuyan extends HttpServlet {
         PreparedStatement sql;
         LiuYan ly=new LiuYan();
         request.setAttribute("liuyan",ly);
+        
         String board_context=request.getParameter("board_context");
         String board_name=request.getParameter("board_name");
         String board_title=request.getParameter("board_title");
@@ -45,8 +46,8 @@ public class HandleLiuyan extends HttpServlet {
          * 将当前时间格式化
          */
         Date time=new Date();
-        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date0=fmt.format(time) ;
+        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd");
+        String board_time=(String)fmt.format(time) ;
         
         
         
@@ -63,7 +64,7 @@ public class HandleLiuyan extends HttpServlet {
             sql.setString(1,board_title.trim());
             sql.setString(2,board_context.trim());
             sql.setString(3,board_name.trim());
-            sql.setString(4,date0+" ".trim());
+            sql.setString(4,board_time.trim());
             int m=sql.executeUpdate();
             if(m!=0){
                 backNews="留言成功！";
@@ -71,7 +72,7 @@ public class HandleLiuyan extends HttpServlet {
                 ly.setBoard_title(board_title.trim());
                 ly.setBoard_name(board_name.trim());
                 ly.setBoard_Context(board_context.trim());
-                ly.setBoard_time(date0);
+                ly.setBoard_time(board_time.trim());
             }
              }
              else{
