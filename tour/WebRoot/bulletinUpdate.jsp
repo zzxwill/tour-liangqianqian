@@ -42,8 +42,7 @@
  //           	out.println("<a href=\"/labmanagement/jsp/groupAdmin.jsp\">返回</a>");
  		%>
  
-            	<a 
-            	href="updatebulletin?bulletin_title=<%=bulletin_title %>&bulletin_context=<%= bulletin_context%>&bulletin_time=<%= bulletin_time%>">修改旅游线路</a><br>
+            	<a href="updatebulletin?bulletin_title=<%=bulletin_title %>& bulletin_context=<%= bulletin_context%>">修改旅游线路</a><br>
 	<%
 		}
             con.close();

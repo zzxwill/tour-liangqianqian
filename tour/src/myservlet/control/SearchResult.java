@@ -40,7 +40,7 @@ public class SearchResult extends HttpServlet {
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
 		
-        String tour_line_name=request.getParameter("board_name");
+        String tour_line_name=request.getParameter("tour_line_name");
         String target="%"+tour_line_name+"%";
        
               
@@ -53,8 +53,8 @@ public class SearchResult extends HttpServlet {
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-      //      String insertCondition ="select * from tour_line_info where tour_line_name like '"+target+"'";
-            String insertCondition ="select * from tour_line_info where '"+target+"' in('tour_line_name like') ";
+         String insertCondition ="select * from tour_line_info where tour_line_name like '"+target+"'";
+     //       String insertCondition ="select * from tour_line_info where '"+target+"' in('tour_line_name like') ";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 
@@ -67,12 +67,20 @@ public class SearchResult extends HttpServlet {
             }
             
             while (rs.next()){
+     //       	String tour_line_name=(String)rs.getObject("tour_line_name");
             	out.println(rs.getObject("tour_line_name"));
+            	out.println(rs.getObject("tour_line_info"));
+            	out.println(rs.getObject("hot_tour_line"));
+            	
+            	out.println("Successful!");
  //           	String tour_line_name=String.valueOf(rs.getObject("tour_line_name"));
  //           	String tour_line_intro=String.valueOf(rs.getObject("tour_line_intro"));
  //           	String hot_tour_line=String.valueOf(rs.getObject("hot_tour_line"));
-            	out.println(rs.getObject("tour_line_intro"));
-            	out.println(rs.getObject("hot_tour_line"));
+       //     	out.println(rs.getObject("tour_line_intro"));
+         //   	out.println(rs.getObject("hot_tour_line"));
+            	Object s=rs.getObject("tour_line_name");
+        	//	out.println("<a href=\"/tour/showSpecialResult.jsp?tour_line_name=<%= s %>\">²é¿´</a>");
+
             }
         }catch(Exception e){};
            

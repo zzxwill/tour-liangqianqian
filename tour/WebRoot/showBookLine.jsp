@@ -13,7 +13,7 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
    
    <%
-   String user_name=request.getParameter("user_name");
+   String tour_line_name=request.getParameter("tour_line_name");
    
    		Connection con;   
         try{
@@ -24,7 +24,7 @@
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-            String insertCondition ="select * from tour_line_book where user_name='"+user_name+"'";
+            String insertCondition ="select * from tour_line_info where tour_line_name='"+tour_line_name+"'";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 
@@ -35,7 +35,7 @@
             %>
          
             <table>
-            <tr><td>旅游线路</td><td>预订时间</td></tr>
+            <tr><td>旅游线路</td><td>用户名</td><td>预订时间</td><td>操作</td></tr>
             <%
             while (rs.next()){
  //           	out.println(rs.getObject("tour_line_name"));
@@ -43,8 +43,12 @@
  //          	String tour_line_intro=String.valueOf();
  //          	String hot_tour_line=String.valueOf();
             out.println("<tr><td>"+rs.getObject("tour_line_name")+"</td><td>");
-//            out.println("<td>"+rs.getObject("hot_tour_line")+"</td><td>");
-            out.println(rs.getObject("book_time")+"</td></tr>");
+          out.println(rs.getObject("user_name")+"</td><td>");
+            out.println(rs.getObject("book_time")+"</td><td>");
+            %>
+            <a 	href="handlelinedelete?tour_line_name=<%=rs.getObject("tour_line_name") %>&user_name=<%= rs.getObject("user_name")%>">删除</a></td></tr><br>
+	
+            <%
             		
 			}
 			%>

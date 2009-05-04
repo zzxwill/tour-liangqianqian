@@ -97,6 +97,10 @@ public class HandleShowByPage extends HttpServlet {
                 str.append("<td>" + rowSet.getString(2) + "</td>");
                 str.append("<td>" + rowSet.getString(3) + "</td>");
                 str.append("<td>" + rowSet.getString(4) + "</td>");
+                str.append("<td>" + rowSet.getString(5) + "</td>");
+                str.append("<td>" + rowSet.getString(6) + "</td>");
+
+                
                 //str.append("<td>"+s+"</td>");
                 str.append("</tr>");
                 rowSet.next();

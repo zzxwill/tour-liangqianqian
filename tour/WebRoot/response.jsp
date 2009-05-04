@@ -40,7 +40,7 @@
             
             while (rs.next()){
             %>
-            <form  action="" method="post">
+         
              <%
             out.println("<tr><td>"+rs.getObject("board_title")+"</td>");
             out.println("<td>"+rs.getObject("board_context")+"</td><td>");
@@ -50,7 +50,7 @@
  			  
             <a href="makeResponse.jsp?board_title=<%=rs.getObject("board_title") %>">µã»÷»Ø¸´</a><br>
             
-            </form>
+       
             
             <% 
  //           out.println(rs.getObject("tour_line_intro")+"</td></tr>");

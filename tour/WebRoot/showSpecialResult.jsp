@@ -13,16 +13,19 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
    
    <%
+      String tour_line_name=request.getParameter("tour_line_name");
+   	String str="%"+tour_line_name+"%";
    		Connection con;   
         try{
         	
             con=DriverManager.getConnection("jdbc:odbc:tour");
+            
             Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
             		ResultSet.CONCUR_UPDATABLE);
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-            String insertCondition ="select * from tour_line_info";
+            String insertCondition ="select * from tour_line_info where tour_line_name like '"+str+"'";
 
 //            ResultSet rs = st.executeQuery("select * from StuScore");
 

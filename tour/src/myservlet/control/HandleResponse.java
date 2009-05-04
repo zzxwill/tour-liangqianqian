@@ -33,10 +33,10 @@ public class HandleResponse extends HttpServlet {
     //Process the HTTP Get request
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-//    	request.setCharacterEncoding("gb2312");
+    	request.setCharacterEncoding("gb2312");
         PrintWriter out = response.getWriter();
         out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
-		out.println("<%@ page pageEncoding=\"gb2312\"%>");
+	//	out.println("<%@ page pageEncoding=\"gb2312\"%>");
         out
 				.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
@@ -52,12 +52,13 @@ public class HandleResponse extends HttpServlet {
          * 将当前时间格式化
          */
         Date time=new Date();
-        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date0=fmt.format(time) ;
+        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd");
+        String date0=(String)fmt.format(time) ;
         
 	    
 	    	out.print(board_title);
 	    	out.print(response_context);
+	    	out.print(date0);
 	    	
         try{
         	
@@ -69,7 +70,14 @@ public class HandleResponse extends HttpServlet {
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
      //  String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
      //       String insertCondition ="insert into board_info(response_context,response_time) values('"+board_title+"','"+date0+"')";
-            String insertCondition ="update board_info set response_context='"+response_context+"' where board_title='"+board_title+"'";
+       //     tour_line_name
+     String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
+
+       //     String insertCondition ="delete from board_info where board_title='"+board_title+"' and user_name='"+tour_line_name+"' ";
+    //       String insertCondition ="insert into board_info(response_context,response_time) values('"+board_title+"','"+date0+"')";
+
+            
+            
             int number = st.executeUpdate(insertCondition);
             
             if(number==1){

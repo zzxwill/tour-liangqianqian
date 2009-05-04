@@ -37,7 +37,7 @@
         </font></td>
       </tr>
 	  <tr>
-	    <td height="32" align="center"><font color="#FF3366">　　<a href="register.jsp">卦指</a></font></td>
+	    <td height="32" align="center"><font color="#FF3366">　　<a href="lineUpdate.jsp">卦指</a></font></td>
 	  </tr>
     </table></td>
   </tr>

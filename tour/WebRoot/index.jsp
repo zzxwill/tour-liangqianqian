@@ -108,7 +108,9 @@ a:link {
                           </tr>
                         </table></td>
                       <td bgcolor="#FFFFFF" align="center" valign="top"><div id="marquees">
-                        <span class="style6"><br><jsp:include page="bulletin_show.jsp"/></span></div>
+                        <span class="style6"><br>
+                         <jsp:include page="bulletin_show.jsp"/>
+                        </span></div>
               <script language="javascript">
               <!--
              marqueesHeight=160; //内容区高度
