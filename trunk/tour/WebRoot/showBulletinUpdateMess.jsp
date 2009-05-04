@@ -32,10 +32,7 @@
         </font></td>
       </tr>
        <tr>
-        <td height="41" align="center"><font color="#FF3366">
-        公告时间:<jsp:getProperty property="bulletin_time" name="bulletin"/>
-        </font></td>
-      </tr>
+        
 	  <tr>
 	    <td height="32" align="center"><font color="#FF3366">　　<a href="bulletinUpdate.jsp">返回</a></font></td>
 	  </tr>

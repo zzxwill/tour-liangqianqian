@@ -25,10 +25,7 @@
       <td background="images/swirly_dance.jpg">
       <textarea name="bulletin_context" rows=10 cols=40></textarea></td>
     </tr>
-    <tr>
-      <td height="36" align="right" valign="middle"><font size="3">公告时间:</font></td>
-      <td><input name="bulletin_time" type="text" size=40></td>
-    </tr>
+    
     
     <tr>
       <td>&nbsp;</td>

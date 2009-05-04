@@ -29,6 +29,9 @@
           <th width="150" height="15" background="images/dbj.jpg"><font color="#00361c">留言内容</font></th>
           <th width="150" height="15" background="images/dbj.jpg"><font color="#00361c">留言人</font></th>
           <th width="150" height="15" background="images/dbj.jpg"><font color="#00361c">留言时间</font></th>
+         <th width="150" height="15" background="images/dbj.jpg"><font color="#00361c">回复内容</font></th>
+                <th width="150" height="15" background="images/dbj.jpg"><font color="#00361c">回复内容</font></th>
+       
         </tr>
         <jsp:getProperty name="show" property="presentPageResult"/>
   </font>

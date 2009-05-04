@@ -45,15 +45,15 @@ public class HandleAddBulletin extends HttpServlet {
         /*
          * 将当前时间格式化
          */
+    	 Date time=new Date();
+         SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+         bulletin_time=fmt.format(time) ;
+         
+
        
-        
- //       String backNews="";
-        boolean boo=true;
-        if(bulletin_title.length()==0||bulletin_context.length()==0||bulletin_time.length()==0)
-            boo=false;
         try{
             con=DriverManager.getConnection("jdbc:odbc:tour");
-            if(boo=true){
+           
 
             String insertCondition =" INSERT INTO bulletin_info(bulletin_title,	bulletin_context, bulletin_time) VALUES(?,?,?)";
             sql = con.prepareStatement(insertCondition);
@@ -71,7 +71,7 @@ public class HandleAddBulletin extends HttpServlet {
                 bulletin.setBulletin_time(bulletin_time.trim());
     //            line.setBoard_time(date0);
             }
-             }
+             
              else{
         //        backNews="请输入留言:";
    //             line.setBackNews(backNews);

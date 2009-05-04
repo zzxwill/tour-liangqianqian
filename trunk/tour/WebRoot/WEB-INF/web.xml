@@ -141,7 +141,14 @@
     <url-pattern>/handlebookline</url-pattern>
   </servlet-mapping>
   
-  
+  <servlet>
+    <servlet-name>handlelinedelete</servlet-name>
+    <servlet-class>myservlet.control.HandleLineDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handlelinedelete</servlet-name>
+    <url-pattern>/handlelinedelete</url-pattern>
+   </servlet-mapping>
   
 </web-app>
 

@@ -36,7 +36,6 @@ public class HandleUpdateBulletin extends HttpServlet {
         request.setAttribute("bulletin",bulletin);
         String bulletin_title=request.getParameter("bulletin_title").trim();
 		String bulletin_context=request.getParameter("bulletin_context").trim();
-		String bulletin_time=request.getParameter("bulletin_time").trim();
 		
 //        System.out.print(tour_line_intro);
 
@@ -48,12 +47,11 @@ public class HandleUpdateBulletin extends HttpServlet {
         {
         	bulletin_context="";
         }
-        if(bulletin_time==null){bulletin_time="";}
-        boolean boo=bulletin_time.length()>0&&bulletin_title.length()>0&&bulletin_context.length()>0;
+        boolean boo=bulletin_title.length()>0&&bulletin_context.length()>0;
         try
         {
             con=DriverManager.getConnection("jdbc:odbc:tour","","");
-            String insertCondition="update bulletin_info set bulletin_context='"+bulletin_context+"',bulletin_time='"+bulletin_time+"' where bulletin_title='"+bulletin_title+"' ";
+            String insertCondition="update bulletin_info set bulletin_context='"+bulletin_context+"' where bulletin_title='"+bulletin_title+"' ";
             sql=con.prepareStatement(insertCondition);
             if(boo)
             {
@@ -69,7 +67,6 @@ public class HandleUpdateBulletin extends HttpServlet {
  //                   line.setTour_line_name(handleString(tour_line_name));
  //               	bulletin.setBulletin_title(bulletin_title);
                 	bulletin.setBulletin_context(bulletin_context);
-                	bulletin.setBulletin_time(bulletin_time);
                  
                 }
             }

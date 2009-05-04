@@ -34,7 +34,7 @@ a:link {
    while(rs.next())
    {
         out.print("<tr>");
-	out.print("<td class=style6>"+rs.getString(1)+"</td>");
+	out.print("<td class=style6><a href=\"showLine.jsp\" target=\"_self\">"+rs.getString(1)+"</a></td>");
         out.print("</tr>");
    }
    out.print("</table>");

@@ -64,14 +64,15 @@ public class UpdateBulletin extends HttpServlet {
 //		String tour_line_name=String.valueOf(req.getParameter("tour_line_name"));
 		String bulletin_title=req.getParameter("bulletin_title");
 		String bulletin_context=req.getParameter(" bulletin_context");
-		String bulletin_time=req.getParameter("bulletin_timet");
+//		String bulletin_time=req.getParameter("bulletin_timet");
 		
+		System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRR"+bulletin_context);
 		
 		
 //		resp.sendRedirect("/tour/updateLineDetail.jsp?name=<%=tour_line_name%>&intro=<%=tour_line_intro%>");
 		req.setAttribute("bulletin_title", bulletin_title  ); 
 		req.setAttribute("bulletin_context", bulletin_context  );
-		req.setAttribute("bulletin_time", bulletin_time );
+//		req.setAttribute("bulletin_time", bulletin_time );
 		
 
         getServletContext().getRequestDispatcher("/updateBulletinDetail.jsp").forward(req,   resp);
