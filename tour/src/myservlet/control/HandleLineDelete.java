@@ -33,9 +33,11 @@ public class HandleLineDelete extends HttpServlet {
     //Process the HTTP Get request
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
-	request.setCharacterEncoding("gb2312");
+//	request.setCharacterEncoding("gb2312");
     PrintWriter out = response.getWriter();
-    out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
+	out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
+
+ //   out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
 //	out.println("<%@ page pageEncoding=\"gb2312\"%>");
     out
 			.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
@@ -46,6 +48,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	Connection con;   
 	
 	request.setCharacterEncoding("gb2312");
+	
 	String tour_line_name=request.getParameter("tour_line_name");
     String user_name=request.getParameter("user_name");
     
@@ -56,20 +59,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
     
     
     	out.print(tour_line_name);
-    	out.print(tour_line_name);
+    	out.print(user_name);
     	
     try{
     	
         con=DriverManager.getConnection("jdbc:odbc:tour");
         Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
         		ResultSet.CONCUR_UPDATABLE);
-//        if(boo=true){
-
-//           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
- //  String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
- //       String insertCondition ="insert into board_info(response_context,response_time) values('"+board_title+"','"+date0+"')";
-   //     tour_line_name
-     //   String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
 
         String insertCondition ="delete from tour_line_book where tour_line_name='"+tour_line_name+"' and user_name='"+user_name+"'";
         
