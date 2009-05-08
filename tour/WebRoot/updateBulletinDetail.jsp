@@ -23,9 +23,7 @@
   </tr>
   <tr>
     <td height="356">
-     <%=bulletin_title %>
- <%=bulletin_context %>
- <%=bulletin_time %>
+  
     <form action="handleupdatebulletin" method="post"> 
      公告标题：  <input name="bulletin_title" type="text" value=<%=bulletin_title %> size="25" readonly ><br />
      公告内容：<input name="bulletin_context" type="text" value=<%=bulletin_context%> size="20" ><br />

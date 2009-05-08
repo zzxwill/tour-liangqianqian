@@ -16,7 +16,7 @@
    		String board_title=request.getParameter("board_title");
     %>
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
-   	  <%=board_title %>
+   	 
    	  <form name="form1" method="post" action="handleresponse">
    	  <input type="hidden" name="board_title" value=<%=board_title %>>
    <textarea  cols=40 rows=8 name="response_context" ></textarea>

@@ -33,9 +33,9 @@ public class HandleUpdateLine extends HttpServlet {
 //        Register reg=new Register();
         Line line=new Line();
         request.setAttribute("line",line);
-        String tour_line_name=request.getParameter("name").trim();
-		String tour_line_intro=request.getParameter("intro").trim();
-		String hot_tour_line=request.getParameter("hot").trim();
+        String tour_line_name=handleString(request.getParameter("name").trim());
+		String tour_line_intro=handleString(request.getParameter("intro").trim());
+		String hot_tour_line=handleString(request.getParameter("hot").trim());
 		
         System.out.print(tour_line_intro);
 
@@ -66,7 +66,8 @@ public class HandleUpdateLine extends HttpServlet {
  //                   backNews="×¢²á³É¹¦£¡";
   //                  reg.setBackNews(backNews);
  //                   line.setTour_line_name(handleString(tour_line_name));
-                    line.setTour_line_intro(handleString(tour_line_intro));
+//                    line.setTour_line_intro(handleString(tour_line_intro));
+                	line.setTour_line_intro(tour_line_intro);
                     line.setHot_tour_line(hot_tour_line);
  //                   reg.setEmail(email);
                 }
