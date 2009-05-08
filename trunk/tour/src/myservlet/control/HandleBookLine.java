@@ -34,17 +34,19 @@ public class HandleBookLine extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         request.setCharacterEncoding("gb2312");
-        Connection con;
-        PreparedStatement sql;
-        BookLine bookline=new BookLine();
-//        Line line=new Line();
-        request.setAttribute("bookline",bookline);
-        
-        
+        PrintWriter out = response.getWriter();
+        out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
+	//	out.println("<%@ page pageEncoding=\"gb2312\"%>");
+        out
+				.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		
+        Connection con;               
         String tour_line_name=request.getParameter("tour_line_name");
-        
         String user_name=request.getParameter("user_name");
-       String book_time=request.getParameter("book_time");
+       String book_time=null;
         
         
         
@@ -52,53 +54,40 @@ public class HandleBookLine extends HttpServlet {
          * 将当前时间格式化
          */
         Date time=new Date();
-        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        book_time=fmt.format(time) ;
+        SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:MM:SS");
+        book_time=(String)fmt.format(time) ;
         
        System.out.println(tour_line_name);
        System.out.println(user_name);
        System.out.println(book_time);
         
        
- //       String backNews="";
-        boolean boo=true;
-      if(tour_line_name.length()==0||user_name.length()==0)
-         boo=false;
-        System.out.println(boo);
+
         try{
             con=DriverManager.getConnection("jdbc:odbc:tour");
-            if(boo=true){
-
-            String insertCondition =" INSERT INTO tour_line_book(tour_line_name,user_name,book_time) VALUES(?,?,?)";
-            sql = con.prepareStatement(insertCondition);
-            sql.setString(1,tour_line_name.trim());
-            sql.setString(2,user_name.trim());
-            sql.setString(3,book_time.trim());
-   //         sql.setString(4,date0+" ".trim());
-            int m=sql.executeUpdate();
-            if(m!=0){
-       //         backNews="留言成功！";
-   //             line.setBackNews(backNews);
-            	bookline.setTour_line_name(tour_line_name.trim());
-            	bookline.setUser_name(user_name.trim());
-            	bookline.setBook_time(book_time.trim());
-            	
-            }
-             }
-             else{
-        //        backNews="请输入留言:";
-   //             line.setBackNews(backNews);
-            }
-            con.close();
-       }
+            Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+            		ResultSet.CONCUR_UPDATABLE);
+            
+            String insertCondition =" INSERT INTO tour_line_book VALUES('"+tour_line_name+"','"+user_name+"','"+book_time+"')";
+            int number = st.executeUpdate(insertCondition);
+            
+            if(number==1){
+        		  out.println("Successful! 恭喜您，新任务添加成功！<br>");
+        		  out.println("<a href='/tour/bookline.jsp'>返回</a>");
+        	  }
+        	  else{
+        		  out.println("Sorry!对不起，新任务添加失败，请返回继续操作！");
+        		   out.println("<a href='/tour/bookline.jsp'>返回</a>");
+        	  }
+              con.close();
+              out.println("  </BODY></html>");
+         }
        catch(Exception e){
     	   System.out.println("插入有误！");
        //    backNews="留言的标题和姓名都不能为空！";
    //        ly.setBackNews(backNews);
        }
 
-       RequestDispatcher dispatcher=request.getRequestDispatcher("showBookLine.jsp");
-       dispatcher.forward(request,response);
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {

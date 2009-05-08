@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=GB2312" %>
+<%@ page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %>  
 <html>
 <body>
 <table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -15,9 +17,7 @@
 //    	out.println(lineID);
 //    	out.println("11111111111");
 
-		out.print("action"+request.getParameter("action"));
-
- 
+ 		
 		
     	
     	

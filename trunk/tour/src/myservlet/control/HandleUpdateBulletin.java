@@ -34,8 +34,8 @@ public class HandleUpdateBulletin extends HttpServlet {
 //        Register reg=new Register();
         Bulletin bulletin=new Bulletin();
         request.setAttribute("bulletin",bulletin);
-        String bulletin_title=request.getParameter("bulletin_title").trim();
-		String bulletin_context=request.getParameter("bulletin_context").trim();
+        String bulletin_title=handleString(request.getParameter("bulletin_title").trim());
+		String bulletin_context=handleString(request.getParameter("bulletin_context").trim());
 		
 //        System.out.print(tour_line_intro);
 

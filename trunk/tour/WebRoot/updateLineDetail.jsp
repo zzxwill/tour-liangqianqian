@@ -9,6 +9,7 @@
 //	String tour_line_name=request.getParameter("name");
 //		String tour_line_intro=request.getParameter("intro");
 //		String hot_tour_line=req.getParameter("hot");
+	response.setCharacterEncoding("gb2312");
 	String   name=(String)request.getAttribute("name");
 	String intro=(String)request.getAttribute("intro");
 	String hot=(String)request.getAttribute("hot");

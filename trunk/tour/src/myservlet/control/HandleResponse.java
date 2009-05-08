@@ -34,17 +34,19 @@ public class HandleResponse extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
     	request.setCharacterEncoding("gb2312");
+    	/********************************************************
+    	 * ********************************88
+    	 */
+    	response.setCharacterEncoding("gb2312");
         PrintWriter out = response.getWriter();
         out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
 	//	out.println("<%@ page pageEncoding=\"gb2312\"%>");
-        out
-				.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+        out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
 		
-		Connection con;   
-		request.setCharacterEncoding("gb2312");
+		Connection con;
 		
 		String board_title=request.getParameter("board_title");
 	    String response_context=request.getParameter("response_context");
@@ -57,9 +59,9 @@ public class HandleResponse extends HttpServlet {
         String date0=(String)fmt.format(time) ;
         
 	    
-	    	out.print(board_title);
-	    	out.print(response_context);
-	    	out.print(date0);
+	    //	out.print(board_title);
+	    //	out.print(response_context);
+	    //	out.print(date0);
 	    	
         try{
         	

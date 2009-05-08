@@ -56,11 +56,13 @@ public class UpdateLine extends HttpServlet {
 	
 		// TODO Auto-generated method stub
 //		resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
+		resp.setCharacterEncoding("gb2312");
 		PrintWriter out = resp.getWriter();
+	
 		/*
 		 *  为了数据库数据的正确显示。
 		 */
-		out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
+//		out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
 
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
@@ -68,11 +70,9 @@ public class UpdateLine extends HttpServlet {
 		out.println("  <BODY>");
 		
 //		String tour_line_name=String.valueOf(req.getParameter("tour_line_name"));
-		String tour_line_name=req.getParameter("name");
-		String tour_line_intro=req.getParameter("intro");
-		String hot_tour_line=req.getParameter("hot");
-		
-		
+		String tour_line_name=handleString(req.getParameter("name"));
+		String tour_line_intro=handleString(req.getParameter("intro"));
+		String hot_tour_line=handleString(req.getParameter("hot"));
 		
 //		resp.sendRedirect("/tour/updateLineDetail.jsp?name=<%=tour_line_name%>&intro=<%=tour_line_intro%>");
 		req.setAttribute("name", tour_line_name  ); 

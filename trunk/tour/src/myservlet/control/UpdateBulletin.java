@@ -55,16 +55,17 @@ public class UpdateBulletin extends HttpServlet {
 		
 		// TODO Auto-generated method stub
 	//	resp.setContentType("text/html;charset=GB2312;characterEncoding=GB2312");
+		resp.setCharacterEncoding("GB2312");
 		PrintWriter out = resp.getWriter();
-	out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
+//		out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
 		
 //		String tour_line_name=String.valueOf(req.getParameter("tour_line_name"));
-		String bulletin_title=req.getParameter("bulletin_title");
-		String bulletin_context=req.getParameter(" bulletin_context");
+		String bulletin_title=handleString(req.getParameter("bulletin_title"));
+		String bulletin_context=handleString(req.getParameter(" bulletin_context"));
 //		String bulletin_time=req.getParameter("bulletin_timet");
 		
 		
