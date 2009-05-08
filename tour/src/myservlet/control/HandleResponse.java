@@ -30,6 +30,9 @@ public class HandleResponse extends HttpServlet {
        }
        return s;
    }
+   
+  
+   
     //Process the HTTP Get request
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
@@ -38,9 +41,9 @@ public class HandleResponse extends HttpServlet {
     	 * ********************************88
     	 */
     	response.setCharacterEncoding("gb2312");
-        PrintWriter out = response.getWriter();
-        out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
-	//	out.println("<%@ page pageEncoding=\"gb2312\"%>");
+    	PrintWriter out = response.getWriter();
+//        out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
+		out.println("<%@ page pageEncoding=\"gb2312\"%>");
         out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
@@ -48,8 +51,8 @@ public class HandleResponse extends HttpServlet {
 		
 		Connection con;
 		
-		String board_title=request.getParameter("board_title");
-	    String response_context=request.getParameter("response_context");
+		String board_title=request.getParameter("board_title").trim();
+	    String response_context=request.getParameter("response_context").trim();
 	    
 	    /*
          * 将当前时间格式化
@@ -74,7 +77,8 @@ public class HandleResponse extends HttpServlet {
      //  String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
      //       String insertCondition ="insert into board_info(response_context,response_time) values('"+board_title+"','"+date0+"')";
        //     tour_line_name
-     String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' where board_title='"+board_title+"'";
+     String insertCondition ="update board_info set response_context='"+response_context+"',response_time='"+date0+"' " +
+     		"where board_title='"+handleString(board_title)+"'";
 
        //     String insertCondition ="delete from board_info where board_title='"+board_title+"' and user_name='"+tour_line_name+"' ";
     //       String insertCondition ="insert into board_info(response_context,response_time) values('"+board_title+"','"+date0+"')";
@@ -97,17 +101,7 @@ public class HandleResponse extends HttpServlet {
        catch(Exception e){
     	   out.println("Error!");
        } 
-		
-      
-        
-       
-       
-    	 
-     
-
-//           
-      
-     
+ 
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {

@@ -34,6 +34,9 @@ public class HandleLineDelete extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 //	request.setCharacterEncoding("gb2312");
+	request.setCharacterEncoding("gb2312");
+	response.setCharacterEncoding("gb2312");
+
     PrintWriter out = response.getWriter();
 	out.print("<%@ page contentType=\"text/html; charset=gb2312\" %>");
 
@@ -47,10 +50,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	Connection con;   
 	
-	request.setCharacterEncoding("gb2312");
 	
-	String tour_line_name=request.getParameter("tour_line_name");
-    String user_name=request.getParameter("user_name");
+	String tour_line_name=handleString(request.getParameter("tour_line_name"));
+    String user_name=handleString(request.getParameter("user_name"));
     
     /*
      * 将当前时间格式化
@@ -58,8 +60,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
    
     
     
-    	out.print(tour_line_name);
-    	out.print(user_name);
+ //   	out.print(tour_line_name);
+  //  	out.print(user_name);
     	
     try{
     	
@@ -72,11 +74,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         int number = st.executeUpdate(insertCondition);
         
         if(number==1){
-  		  out.println("Successful! 恭喜您，新任务添加成功！<br>");
+  		  out.println("Successful! 恭喜您，删除成功！<br>");
   		  out.println("<a href='/tour/bookline.jsp'>返回</a>");
   	  }
   	  else{
-  		  out.println("Sorry!对不起，新任务添加失败，请返回继续操作！");
+  		  out.println("Sorry!对不起，删除失败，请返回继续操作！");
   		   out.println("<a href='/tour/bookline.jsp'>返回</a>");
   	  }
         con.close();

@@ -42,7 +42,7 @@
  //           	out.println(rs.getObject("tour_line_name"));
 //           	String tour_line_name=String.valueOf(rs.getObject("tour_line_name"));
  //          	String tour_line_intro=String.valueOf();
- //          	String hot_tour_line=String.valueOf();
+ //          	String hot_tour_line=String.valueOf(); 		
             out.println("<tr><td>"+rs.getObject("tour_line_name")+"</td><td>");
           out.println(rs.getObject("user_name")+"</td><td>");
             out.println(rs.getObject("book_time")+"</td><td>");
