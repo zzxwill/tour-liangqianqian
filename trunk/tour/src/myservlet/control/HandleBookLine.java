@@ -34,9 +34,10 @@ public class HandleBookLine extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         request.setCharacterEncoding("gb2312");
+        response.setCharacterEncoding("GB2312");
         PrintWriter out = response.getWriter();
         out.println("<%@ page language=\"java\" contentType=\"text/html charset=gb2312\" %> ");
-	//	out.println("<%@ page pageEncoding=\"gb2312\"%>");
+		out.println("<%@ page pageEncoding=\"gb2312\"%>");
         out
 				.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
@@ -44,8 +45,8 @@ public class HandleBookLine extends HttpServlet {
 		out.println("  <BODY>");
 		
         Connection con;               
-        String tour_line_name=request.getParameter("tour_line_name");
-        String user_name=request.getParameter("user_name");
+        String tour_line_name=handleString(request.getParameter("tour_line_name"));
+        String user_name=handleString(request.getParameter("user_name"));
        String book_time=null;
         
         
@@ -55,9 +56,9 @@ public class HandleBookLine extends HttpServlet {
          */
         Date time=new Date();
         SimpleDateFormat fmt= new SimpleDateFormat("yyyy-MM-dd HH:MM:SS");
-        book_time=(String)fmt.format(time) ;
+        book_time=handleString((String)fmt.format(time)) ;
         
-       System.out.println(tour_line_name);
+       System.out.println(request.getParameter("tour_line_name"));
        System.out.println(user_name);
        System.out.println(book_time);
         
@@ -68,7 +69,7 @@ public class HandleBookLine extends HttpServlet {
             Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
             		ResultSet.CONCUR_UPDATABLE);
             
-            String insertCondition =" INSERT INTO tour_line_book VALUES('"+tour_line_name+"','"+user_name+"','"+book_time+"')";
+            String insertCondition =" INSERT INTO tour_line_book VALUES('"+request.getParameter("tour_line_name")+"','"+user_name+"','"+book_time+"')";
             int number = st.executeUpdate(insertCondition);
             
             if(number==1){
