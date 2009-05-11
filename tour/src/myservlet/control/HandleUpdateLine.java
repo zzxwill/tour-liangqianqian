@@ -65,7 +65,7 @@ public class HandleUpdateLine extends HttpServlet {
                 {
  //                   backNews="×¢²á³É¹¦£¡";
   //                  reg.setBackNews(backNews);
- //                   line.setTour_line_name(handleString(tour_line_name));
+                   line.setTour_line_name(handleString(tour_line_name));
 //                    line.setTour_line_intro(handleString(tour_line_intro));
                 	line.setTour_line_intro(tour_line_intro);
                     line.setHot_tour_line(hot_tour_line);
