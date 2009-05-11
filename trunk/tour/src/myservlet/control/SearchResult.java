@@ -32,18 +32,19 @@ public class SearchResult extends HttpServlet {
     //Process the HTTP Get request
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        request.setCharacterEncoding("gb2312");
+        request.setCharacterEncoding("GB2312");
+        response.setCharacterEncoding("GB2312");
         PrintWriter out = response.getWriter();
-		out
-				.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<%@ page contentType=\"text/html; charset=GB2312\" %>");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
 		
         String tour_line_name=request.getParameter("tour_line_name");
-        String target="%"+tour_line_name+"%";
+//        String target="%"+tour_line_name+"%";
        
-              
+            
         Connection con;   
         try{
         	
@@ -53,38 +54,31 @@ public class SearchResult extends HttpServlet {
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-         String insertCondition ="select * from tour_line_info where tour_line_name like '"+target+"'";
-     //       String insertCondition ="select * from tour_line_info where '"+target+"' in('tour_line_name like') ";
-
-//            ResultSet rs = st.executeQuery("select * from StuScore");
-
+       String insertCondition ="select * from tour_line_info where tour_line_name like  '"+"%"+tour_line_name+"%"+"'";
+   //         String insertCondition ="select * from tour_line_info ";
             
-//            sql = con.prepareStatement(insertCondition);
             
             ResultSet rs = st.executeQuery(insertCondition);
-            if(rs.next()==false){
-            	out.print("没有相应的路线。");
-            }
-            
+ //           if(rs.next()==false){
+  //          	out.print("没有相应的路线。");
+  //          }
+            out.println("<table>");
+            out.println("<tr><td>线路名</td><td>介绍</td><td>是火爆路线？</td></tr>");
             while (rs.next()){
      //       	String tour_line_name=(String)rs.getObject("tour_line_name");
-            	out.println(rs.getObject("tour_line_name"));
-            	out.println(rs.getObject("tour_line_info"));
-            	out.println(rs.getObject("hot_tour_line"));
-            	
-            	out.println("Successful!");
- //           	String tour_line_name=String.valueOf(rs.getObject("tour_line_name"));
- //           	String tour_line_intro=String.valueOf(rs.getObject("tour_line_intro"));
- //           	String hot_tour_line=String.valueOf(rs.getObject("hot_tour_line"));
-       //     	out.println(rs.getObject("tour_line_intro"));
-         //   	out.println(rs.getObject("hot_tour_line"));
-            	Object s=rs.getObject("tour_line_name");
-        	//	out.println("<a href=\"/tour/showSpecialResult.jsp?tour_line_name=<%= s %>\">查看</a>");
-
+  //          	out.println("<tr><td>"+rs.getObject("tour_line_name"));
+            	out.println("<tr><td>"+rs.getObject(1));
+           	out.println("</td><td>"+rs.getObject(2));
+            	out.println("</td><td>"+""+rs.getObject(3)+"</td></tr>");  
+            	out.println("</td></tr>");  
             }
-        }catch(Exception e){};
+            out.println("</table>");
+        }catch(Exception e){
+        	out.print("没有相应的路线。");
+        	
+        };
            
-    		
+    //    
            	out.println("  </BODY>");
     		out.println("</HTML>");
     		out.flush();
