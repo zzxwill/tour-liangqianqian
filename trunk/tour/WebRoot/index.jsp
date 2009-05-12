@@ -186,7 +186,7 @@ marquees.scrollTop=templayer.offsetHeight-marqueesHeight+1;
               <!--DWLayoutTable-->
               <tr>
                 <td width="385" height="13" valign="middle">
-                <form name="form2" method="post" action="searchresult">
+                <form name="form2" method="post" action="searchResult_select.jsp">
                     <table width="100%" border="0" cellspacing="0">
                       <tr>
                         <td width="38%"><div align="center" class="style1">旅游线路名称:</div></td>

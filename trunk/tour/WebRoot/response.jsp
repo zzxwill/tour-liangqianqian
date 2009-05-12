@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@ page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %> 
 <%@page import="java.sql.*;"  %>
 <html>
 <head>
@@ -10,8 +12,13 @@
   </tr>
   <tr>
     <td height="356">
+    <form name="form1" method="post" action="handleupdateline">
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
-   
+   <%
+   request.setCharacterEncoding("gb2312"); 
+    %>		
+   <tr>
+            <td>留言标题</td><td>留言内容</td><td>操作</td></tr>
    <%
    		Connection con;   
         try{
@@ -30,41 +37,32 @@
 //            sql = con.prepareStatement(insertCondition);
             
             ResultSet rs = st.executeQuery(insertCondition);
-            %>
-         
-            
-            <tr>
-            <td>留言标题</td><td>留言内容</td><td>操作</td></tr>
-           
-            <%
-            
             while (rs.next()){
-            %>
-         
-             <%
-            out.println("<tr><td>"+rs.getObject("board_title")+"</td>");
-            out.println("<td>"+rs.getObject("board_context")+"</td><td>");
-            //             <textarea  cols=20 name="response_context" ></textarea>
-            
-            %>
- 			  
-            <a href="makeResponse.jsp?board_title=<%=rs.getObject("board_title") %>">点击回复</a><br>
-            
-       
-            
-            <% 
- //           out.println(rs.getObject("tour_line_intro")+"</td></tr>");
-            		
-			}
+            	out.println("<tr><td>"+rs.getObject("board_title")+"</td>");
+           	String board_title=String.valueOf(rs.getObject("board_title"));
+           	String board_context=String.valueOf(rs.getObject("board_context"));
+        //   	String hot_tour_line=String.valueOf(rs.getObject("hot_tour_line"));
+//            	out.println(rs.getObject("tour_line_id"));
+//            	out.println(rs.getObject("tour_line_intro"));
+           	out.println("<td>"+rs.getObject("board_context")+"</td><td>");
+ //           	out.println("<a href=\"/labmanagement/jsp/groupAdmin.jsp\">返回</a>");
+ 		
+ 		%>
+ 
+            	<a 
+            	href="updateline2?name=<%=board_title %>&intro=<%= board_context%>">修改旅游线路</a><br>
+	</td></tr>
+	<%
+		}
             con.close();
-            
        }
        catch(Exception e){
-    	  
+    	   out.println("Error!");
        } 
        
      %>
   </table>
+</form>
 </td>
   </tr>
 </table>

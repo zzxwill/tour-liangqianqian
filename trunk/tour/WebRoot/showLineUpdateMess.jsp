@@ -1,7 +1,9 @@
-<%@ page contentType="text/html; charset=GB2312" %>
+<%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
 <%@ page language="java" contentType="text/html; charset=GB2312" %>
 <%@ page import="mybean.data.*" %>
 <jsp:useBean id="line" scope="request" type="mybean.data.Line"/>
+<% request.setCharacterEncoding("GB2312");%>
+ <%       response.setCharacterEncoding("GB2312");%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB2312">

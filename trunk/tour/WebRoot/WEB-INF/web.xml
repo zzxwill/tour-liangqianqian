@@ -69,6 +69,16 @@
   
   
   <servlet>
+    <servlet-name>handleupdateline2</servlet-name>
+    <servlet-class>myservlet.control.HandleUpdateLine2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>handleupdateline2</servlet-name>
+    <url-pattern>/handleupdateline2</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
     <servlet-name>handleresponse</servlet-name>
     <servlet-class>myservlet.control.HandleResponse</servlet-class>
   </servlet>
@@ -85,6 +95,18 @@
     <servlet-name>updateline</servlet-name>
     <url-pattern>/updateline</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>updateline2</servlet-name>
+    <servlet-class>myservlet.control.UpdateLine2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateline2</servlet-name>
+    <url-pattern>/updateline2</url-pattern>
+  </servlet-mapping>
+  
+  
   
   <servlet>
     <servlet-name>handleaddline</servlet-name>

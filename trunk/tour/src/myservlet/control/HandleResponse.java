@@ -53,7 +53,8 @@ public class HandleResponse extends HttpServlet {
 		
 		String board_title=request.getParameter("board_title").trim();
 	    String response_context=request.getParameter("response_context").trim();
-	    
+	    out.println(board_title);
+	    out.println(response_context);
 	    /*
          * 将当前时间格式化
          */

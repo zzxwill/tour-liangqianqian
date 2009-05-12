@@ -1,6 +1,7 @@
-<%@   page   contentType="text/html;   charset=gb2312"   language="java" %>  
-<%@page pageEncoding="GB2312"%>
+<%@ page contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@ page pageEncoding="GB2312"%>
 <% request.setCharacterEncoding("GB2312"); %>   
+<%@ page language="java" %>
 <html>
 <head>
 </head>
@@ -11,6 +12,7 @@
 
 //	String tour_line_name=request.getParameter("name");
 //		String tour_line_intro=request.getParameter("intro");
+     response.setCharacterEncoding("gb2312");
 	String   bulletin_title=(String)request.getAttribute("bulletin_title");
 	String bulletin_context=(String)request.getAttribute("bulletin_context");
 	String bulletin_time=(String)request.getAttribute("bulletin_time");
@@ -29,6 +31,7 @@
      公告内容：<input name="bulletin_context" type="text" value=<%=bulletin_context%> size="20" ><br />
 	<input type="submit" value="确认更改" /><br />
 	</form>
+	
 </td>
   </tr>
 </table>

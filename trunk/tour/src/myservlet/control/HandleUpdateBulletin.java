@@ -37,7 +37,8 @@ public class HandleUpdateBulletin extends HttpServlet {
         String bulletin_title=handleString(request.getParameter("bulletin_title").trim());
 		String bulletin_context=handleString(request.getParameter("bulletin_context").trim());
 		
-//        System.out.print(tour_line_intro);
+      //  System.out.print("BUAA"+bulletin_title);
+	//	req.setAttribute("bulletin_title", bulletin_title  ); 
 
         if(bulletin_title==null)
         {
@@ -65,7 +66,7 @@ public class HandleUpdateBulletin extends HttpServlet {
  //                   backNews="×¢²á³É¹¦£¡";
   //                  reg.setBackNews(backNews);
  //                   line.setTour_line_name(handleString(tour_line_name));
- //               	bulletin.setBulletin_title(bulletin_title);
+                	bulletin.setBulletin_title(bulletin_title);
                 	bulletin.setBulletin_context(bulletin_context);
                  
                 }
