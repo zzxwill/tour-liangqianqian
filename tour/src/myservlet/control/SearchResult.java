@@ -41,7 +41,7 @@ public class SearchResult extends HttpServlet {
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
 		
-        String tour_line_name=request.getParameter("tour_line_name");
+        String tour_line_name=handleString(request.getParameter("tour_line_name"));
 //        String target="%"+tour_line_name+"%";
        
             
@@ -54,8 +54,10 @@ public class SearchResult extends HttpServlet {
 //            if(boo=true){
 
  //           String insertCondition ="INSERT INTO board_info(board_title,board_context,board_name,board_time) VALUES(?,?,?,?)";
-       String insertCondition ="select * from tour_line_info where tour_line_name like  '"+"%"+tour_line_name+"%"+"'";
-   //         String insertCondition ="select * from tour_line_info ";
+  //     String insertCondition ="select * from tour_line_info where tour_line_name like  '"+"%"+tour_line_name+"%"+"'";
+            String insertCondition ="select * from tour_line_info where tour_line_name =  '"+tour_line_name+"'";
+            
+            //         String insertCondition ="select * from tour_line_info ";
             
             
             ResultSet rs = st.executeQuery(insertCondition);
@@ -67,10 +69,10 @@ public class SearchResult extends HttpServlet {
             while (rs.next()){
      //       	String tour_line_name=(String)rs.getObject("tour_line_name");
   //          	out.println("<tr><td>"+rs.getObject("tour_line_name"));
-            	out.println("<tr><td>"+rs.getObject(1));
+            	out.println("<tr><td>"+rs.getObject("tour_line_name"));
            	out.println("</td><td>"+rs.getObject(2));
             	out.println("</td><td>"+""+rs.getObject(3)+"</td></tr>");  
-            	out.println("</td></tr>");  
+            	 
             }
             out.println("</table>");
         }catch(Exception e){

@@ -11,7 +11,8 @@
     <td><jsp:include page="top.jsp"/></td>
   </tr>
   <tr>
-    <td height="356"><form name="form1" method="post" action="handleupdateline">
+    <td height="356">
+    <form name="form1" method="post" action="handleupdateline">
   <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
    <%
    request.setCharacterEncoding("gb2312"); 
@@ -44,6 +45,7 @@
 //            	out.println(rs.getObject("tour_line_intro"));
            	out.println(rs.getObject("hot_tour_line"));
  //           	out.println("<a href=\"/labmanagement/jsp/groupAdmin.jsp\">·µ»Ø</a>");
+ 		
  		%>
  
             	<a 

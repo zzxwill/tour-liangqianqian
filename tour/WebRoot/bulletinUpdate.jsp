@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html;   charset=gb2312"   language="java" %>  
+<%@ page pageEncoding="GB2312"%>
+<% request.setCharacterEncoding("GB2312"); %> 
 <%@page import="java.sql.*;"  %>
 <html>
 <head>

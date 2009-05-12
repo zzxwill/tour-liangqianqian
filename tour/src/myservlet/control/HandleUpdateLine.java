@@ -37,7 +37,7 @@ public class HandleUpdateLine extends HttpServlet {
 		String tour_line_intro=handleString(request.getParameter("intro").trim());
 		String hot_tour_line=handleString(request.getParameter("hot").trim());
 		
-        System.out.print(tour_line_intro);
+        System.out.print(tour_line_name);
 
         if(tour_line_name==null)
         {
